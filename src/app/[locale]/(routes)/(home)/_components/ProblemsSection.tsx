@@ -28,10 +28,10 @@ export default function ProblemsSection() {
   return (
     <section className="p-20 bg-primary">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-[40px] text-[#111827] text-center mb-4">
+        <h2 className="text-[40px] text-white text-center mb-4">
           The Challenge HR Managers Face
         </h2>
-        <p className="text-lg text-[#6B7280] text-center mb-16">
+        <p className="text-lg text-[#B2ADD2] text-center mb-16">
           Event planning shouldn't consume your entire week
         </p>
 

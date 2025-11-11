@@ -20,7 +20,7 @@ export default function TrustedCompanies() {
   ];
 
   return (
-    <section className="mt-20">
+    <section className="m-20">
       <div className="max-w-7xl mx-auto text-center">
         <p className="text-primary font-semibold mb-6 flex items-center justify-center gap-2 text-2xl  rounded-lg w-max mx-auto px-4 py-2 shadow-sm">
           Partnering with leading institutions in Azerbaijan
