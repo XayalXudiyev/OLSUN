@@ -4,17 +4,17 @@ export default function TrustedCompanies() {
   const supportedBy = [
     {
       name: "Mədəniyyət Nazirliyi",
-      logo: "/supported/Mədəniyyət_Nazirliyi.png",
+      logo: "/images/supported/Mədəniyyət_Nazirliyi.png",
       alt: "Azerbaijan Ministry of Culture",
     },
     {
       name: "Yaradıcı Mərkəz",
-      logo: "/supported/yardıcı-mərkəz.png",
+      logo: "/images/supported/yardıcı-mərkəz.png",
       alt: "Creative Center",
     },
     {
       name: "CulTech İnkubasiya Mərkəzi",
-      logo: "/supported/cultech.webp",
+      logo: "/images/supported/cultech.webp",
       alt: "CulTech Incubation Center",
     },
   ];

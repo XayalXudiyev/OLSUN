@@ -51,7 +51,7 @@ export default function HeroSection({
 
         <div className="relative">
           <Image
-            src="/hero-photo.webp"
+            src="/images/Landing/hero-photo.webp"
             alt="Corporate event celebration"
             width={600}
             height={500}
