@@ -36,7 +36,7 @@ export default function Footer() {
       <div className="max-w-[1280px] mx-auto px-10 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
-            <h3 className="text-[24px] mb-3">Olsun Events</h3>
+            <h3 className="text-[24px] mb-3">Olsun</h3>
             <p className="text-sm text-[#9CA3AF] mb-6">
               Your partner in seamless event management
             </p>
@@ -119,7 +119,7 @@ export default function Footer() {
 
         <div className="border-t border-[#374151] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-[#9CA3AF]">
-            © {new Date().getFullYear()} Olsun Events. All rights reserved.
+            © {new Date().getFullYear()} Olsun. All rights reserved.
           </p>
           <p className="text-sm text-[#9CA3AF]">
             Supported by Ministry of Culture | CulTech Incubation Program

@@ -35,7 +35,7 @@ export default function SolutionsSection() {
     <section className="p-20 bg-white">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-semibold text-center mb-16">
-          How Olsun Events Solves It
+          How Olsun Solves It
         </h2>
 
         <div className="space-y-14">
