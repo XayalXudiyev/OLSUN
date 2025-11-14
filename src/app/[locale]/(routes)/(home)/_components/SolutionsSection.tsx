@@ -1,41 +1,41 @@
 import { CheckCircle, Zap, Puzzle } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-const solutionsData = [
-  {
-    icon: CheckCircle,
-    title: "Curated Marketplace",
-    description:
-      "Browse 20+ pre-vetted venues, service providers, and vendors in one platform. Filter by budget, capacity, location, and availability instantly.",
-    image: "/images/Landing/Curated-marketplace.webp",
-    iconColor: "#10B981",
-    reverse: false,
-  },
-  {
-    icon: Zap,
-    title: "Streamlined Booking",
-    description:
-      "Submit one request, get responses from multiple vendors. Compare prices transparently, book with confidence, and track everything in your dashboard.",
-    image: "/images/Landing/Streamlined-booking.webp",
-    iconColor: "#3B82F6",
-    reverse: true,
-  },
-  {
-    icon: Puzzle,
-    title: "All-in-One Coordination",
-    description:
-      "Manage RSVPs, track budgets, communicate with vendors, and coordinate logistics—all from one simple interface.",
-    image: "/images/Landing/Curated-marketplace.webp",
-    iconColor: "#6366F1",
-    reverse: false,
-  },
-];
 export default function SolutionsSection() {
+  const t = useTranslations("landing");
+
+  const solutionsData = [
+    {
+      icon: CheckCircle,
+      title: t("curated-marketplace"),
+      description: t("curated-marketplace-text"),
+      image: "/images/Landing/Curated-marketplace.webp",
+      iconColor: "#10B981",
+      reverse: false,
+    },
+    {
+      icon: Zap,
+      title: t("streamlined-booking"),
+      description: t("streamlined-booking-text"),
+      image: "/images/Landing/Streamlined-booking.webp",
+      iconColor: "#3B82F6",
+      reverse: true,
+    },
+    {
+      icon: Puzzle,
+      title: t("verified-trusted"),
+      description: t("verified-trusted-text"),
+      image: "/images/Landing/Curated-marketplace.webp",
+      iconColor: "#6366F1",
+      reverse: false,
+    },
+  ];
   return (
     <section className="p-20 bg-white">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-semibold text-center mb-16">
-          How Olsun Solves It
+          {t("how-olsun-solves-it")}
         </h2>
 
         <div className="space-y-14">

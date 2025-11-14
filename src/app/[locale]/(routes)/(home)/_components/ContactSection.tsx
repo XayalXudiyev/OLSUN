@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslations } from "next-intl";
 import { z } from "zod";
 import { toast } from "sonner";
 
@@ -20,6 +21,8 @@ const contactSchema = z.object({
 export type FormData = z.infer<typeof contactSchema>;
 
 export default function ContactSection() {
+  const t = useTranslations("get-in-touch");
+
   const {
     register,
     handleSubmit,
@@ -75,17 +78,17 @@ export default function ContactSection() {
       <div className="max-w- mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold text-gray-900 mb-6">
-            Get In Touch
+            {t("title")}
           </h2>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
           <div className="relative bg-linear-to-br from-primary to-primary rounded-3xl p-8 text-white overflow-hidden">
             <div className="relative z-10">
-              <h3 className="text-2xl font-bold mb-4">Contact Information</h3>
-              <p className="text-teal-100 mb-8">
-                Have questions or feedback? We'd love to hear from you
-              </p>
+              <h3 className="text-2xl font-bold mb-4">
+                {t("contact-information")}
+              </h3>
+              <p className="text-teal-100 mb-8">{t("description")}</p>
 
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
@@ -122,11 +125,11 @@ export default function ContactSection() {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <Label htmlFor="name">Your Name</Label>
+                  <Label htmlFor="name">{t("your-name")}</Label>
                   <Input
                     id="name"
                     type="text"
-                    placeholder="Enter your name"
+                    placeholder={t("enter-your-name")}
                     className="border border-primary/10"
                     {...register("name")}
                   />
@@ -138,11 +141,11 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <Label htmlFor="email">Your Email</Label>
+                  <Label htmlFor="email">{t("your-email")}</Label>
                   <Input
                     id="email"
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder={t("enter-your-email")}
                     className="border border-primary/10"
                     {...register("email")}
                   />
@@ -153,11 +156,11 @@ export default function ContactSection() {
                   )}
                 </div>
                 <div>
-                  <Label htmlFor="phone">Your Phone</Label>
+                  <Label htmlFor="phone">{t("your-phone")}</Label>
                   <Input
                     id="phone"
                     type="tel"
-                    placeholder="Enter your phone number"
+                    placeholder={t("enter-your-phone")}
                     className="border border-primary/10"
                     {...register("phone")}
                   />
@@ -168,11 +171,11 @@ export default function ContactSection() {
                   )}
                 </div>
                 <div>
-                  <Label htmlFor="company">Your Company</Label>
+                  <Label htmlFor="company">{t("your-company")}</Label>
                   <Input
                     id="company"
                     type="text"
-                    placeholder="Enter your company"
+                    placeholder={t("enter-your-company")}
                     className="border border-primary/10"
                     {...register("company")}
                   />
@@ -184,12 +187,12 @@ export default function ContactSection() {
                 </div>
               </div>
               <div>
-                <Label htmlFor="message">Message</Label>
+                <Label htmlFor="message">{t("your-message")}</Label>
                 <Textarea
                   id="message"
                   rows={4}
                   className="border border-primary/10"
-                  placeholder="Write here your message 👋"
+                  placeholder={t("enter-your-message")}
                   {...register("message")}
                 />
                 {errors.message && (
@@ -204,7 +207,7 @@ export default function ContactSection() {
                 className="bg-primary hover:bg-primary/80 text-white px-8 py-3 rounded-lg font-medium"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {isSubmitting ? "Sending..." : t("send-message")}
               </Button>
             </form>
           </div>

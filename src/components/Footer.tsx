@@ -1,9 +1,10 @@
 import { Instagram, Linkedin, Facebook } from "lucide-react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 
 export default function Footer() {
   const locale = useLocale();
+  const t = useTranslations("footer");
 
   const socialLinks = [
     { icon: Instagram, href: "https://instagram.com/olsunevents" },
@@ -12,23 +13,23 @@ export default function Footer() {
   ];
 
   const quickLinks = [
-    { label: "Home", href: "/", isRoute: true },
-    { label: "About Us", href: `/${locale}#about`, isRoute: false },
-    { label: "Services", href: `/${locale}/services`, isRoute: true },
-    { label: "Contact", href: `/${locale}#contact`, isRoute: false },
+    { label: t("home"), href: "/", isRoute: true },
+    { label: t("about-us"), href: `/${locale}#about`, isRoute: false },
+    { label: t("services"), href: `/${locale}/services`, isRoute: true },
+    { label: t("contact"), href: `/${locale}#contact`, isRoute: false },
   ];
 
   const supportLinks = [
-    { label: "Help Center", href: "#" },
-    { label: "Pricing", href: "/pricing", isRoute: true },
-    { label: "Terms of Service", href: "#" },
-    { label: "Privacy Policy", href: "#" },
+    { label: t("help-center"), href: "#" },
+    { label: t("pricing"), href: "/pricing", isRoute: true },
+    { label: t("terms-of-service"), href: "#" },
+    { label: t("privacy-policy"), href: "#" },
   ];
 
   const contactInfo = [
-    { label: "Email", value: "info@olsunevents.com" },
-    { label: "Phone", value: "+994 10 417 71 32" },
-    { label: "Address", value: "Baku, Azerbaijan" },
+    { label: t("email"), value: "info@olsunevents.com" },
+    { label: t("phone"), value: "+994 10 417 71 32" },
+    { label: t("address"), value: "Baku, Azerbaijan" },
   ];
 
   return (
@@ -56,7 +57,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-[16px] mb-4">Quick Links</h4>
+            <h4 className="text-[16px] mb-4">{t("quicks-links")}</h4>
             <div className="flex flex-col gap-3">
               {quickLinks.map((link) =>
                 link.isRoute ? (
@@ -81,7 +82,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-[16px] mb-4">Support</h4>
+            <h4 className="text-[16px] mb-4">{t("support")}</h4>
             <div className="flex flex-col gap-3">
               {supportLinks.map((link) =>
                 link.isRoute ? (
@@ -106,7 +107,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-[16px] mb-4">Contact</h4>
+            <h4 className="text-[16px] mb-4">{t("contacts")}</h4>
             <div className="flex flex-col gap-3 text-sm text-[#D1D5DB]">
               {contactInfo.map((contact) => (
                 <p key={contact.label}>
@@ -119,11 +120,9 @@ export default function Footer() {
 
         <div className="border-t border-[#374151] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-[#9CA3AF]">
-            © {new Date().getFullYear()} Olsun. All rights reserved.
+            © {new Date().getFullYear()} Olsun. {t("all-rights-reserved")}
           </p>
-          <p className="text-sm text-[#9CA3AF]">
-            Supported by Ministry of Culture | CulTech Incubation Program
-          </p>
+          <p className="text-sm text-[#9CA3AF]">{t("supported-by")}</p>
         </div>
       </div>
     </footer>

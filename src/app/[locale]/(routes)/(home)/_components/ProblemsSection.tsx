@@ -1,27 +1,26 @@
 import { Clock, HelpCircle, Puzzle } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export default function ProblemsSection() {
+  const t = useTranslations("landing");
   const problemsData = [
     {
       icon: "/icons/Clock.svg",
-      title: "Hours Wasted Searching",
-      description:
-        "Calling 20+ vendors, scrolling Instagram endlessly, coordinating across WhatsApp groups—event planning consumes 10+ hours per event",
+      title: t("problem-hours-wasted"),
+      description: t("problem-hours-wasted-text"),
       bgColor: "#EF4444",
     },
     {
       icon: "/icons/Partnership.svg",
-      title: "No Quality Assurance",
-      description:
-        "Unreliable vendors, hidden costs, last-minute cancellations—finding trustworthy partners feels like gambling",
+      title: t("problem-quality-assurance"),
+      description: t("problem-quality-assurance-text"),
       bgColor: "#F59E0B",
     },
     {
       icon: `/icons/Chaos.svg`,
-      title: "Fragmented Process",
-      description:
-        "Juggling multiple tools, spreadsheets, and platforms makes coordination chaotic and error-prone",
+      title: t("problem-fragmented-process"),
+      description: t("problem-fragmented-process-text"),
       bgColor: "#6366F1",
     },
   ];
@@ -30,10 +29,10 @@ export default function ProblemsSection() {
     <section className="p-20 bg-primary">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-[40px] text-white text-center mb-4">
-          The Challenge HR Managers Face
+          {t("the-challenges-faced")}
         </h2>
         <p className="text-lg text-[#B2ADD2] text-center mb-16">
-          Event planning shouldn't consume your entire week
+          {t("event-planning-shouldnt-consume")}
         </p>
 
         <div className="grid md:grid-cols-3 gap-8 ">

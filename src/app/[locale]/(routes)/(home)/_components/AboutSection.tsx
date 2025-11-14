@@ -1,7 +1,10 @@
 import { Handshake, Clock, Shield } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export default function AboutSection() {
+  const t = useTranslations("landing");
+
   const statsData = [
     {
       icon: Handshake,
@@ -11,14 +14,14 @@ export default function AboutSection() {
     },
     {
       icon: Clock,
-      value: "10 Hours",
-      label: "Time Saved Per Event",
+      value: t("time-is-saved-value"),
+      label: t("time-is-saved"),
       color: "#10B981",
     },
     {
       icon: Shield,
-      value: "100%",
-      label: "Verified Vendors",
+      value: t("verified-value"),
+      label: t("verified"),
       color: "#3B82F6",
     },
   ];
@@ -35,17 +38,13 @@ export default function AboutSection() {
               height={24}
               className="inline-block mr-2"
             />
-            Who We Are
+            {t("who-we-are")}
           </p>
           <h2 className="text-4xl  leading-tight mb-6 font-semibold">
-            Building Azerbaijan's Event Ecosystem
+            {t("building-first-event-ecosystem")}
           </h2>
           <p className="text-lg text-[#6B7280] leading-relaxed mb-8">
-            Olsun Events is Azerbaijan's first corporate event marketplace,
-            connecting HR managers and office coordinators with pre-vetted
-            venues, service providers, and vendors. Born from the need to
-            simplify event planning, we're backed by the CulTech Incubation
-            Program and supported by Azerbaijan's Ministry of Culture.
+            {t("building-first-event-ecosystem-text")}
           </p>
 
           <div className="grid grid-cols-3 gap-6">

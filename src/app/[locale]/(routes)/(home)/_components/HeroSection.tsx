@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 interface HeroSectionProps {
@@ -11,6 +12,8 @@ export default function HeroSection({
   onExploreServices,
   onScrollToSection,
 }: HeroSectionProps) {
+  const t = useTranslations("landing");
+
   return (
     <section
       id="home"
@@ -19,14 +22,13 @@ export default function HeroSection({
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         <div>
           <p className="text-sm text-[#6366F1] uppercase tracking-wider mb-3 font-bold bg-[#F1EFFF] px-3 py-1 rounded-md inline-block">
-            Azerbaijan's First Corporate Event Marketplace
+            {t("first-corporate-event-marketplace")}
           </p>
           <h1 className="text-5xl md:text-[56px] leading-tight text-[#111827] mb-4 font-normal">
-            Revolutionizing Event Management in Azerbaijan
+            {t("facilitating-corporate-events")}
           </h1>
           <h2 className="text-xl text-[#6B7280] leading-normal mb-6 max-w-[540px]">
-            The all-in-one marketplace connecting HR managers with trusted
-            venues, services, and vendors for seamless corporate events
+            {t("we-connect")}
           </h2>
 
           <div className="flex flex-col h-14 sm:flex-row gap-4 mb-6">
@@ -35,7 +37,7 @@ export default function HeroSection({
               onClick={onExploreServices}
               className="bg-primary h-full text-white text-lg rounded-xl flex items-center justify-center gap-1.5 transition-all hover:bg-primary/90 hover:shadow-lg hover:scale-[1] hover:cursor-pointer"
             >
-              Explore Services
+              {t("explore-services")}
               <ArrowRight className="w-5 h-5" />
             </Button>
             <Button
@@ -44,7 +46,7 @@ export default function HeroSection({
               onClick={() => onScrollToSection("#about")}
               className="border-[1.5px] border-primary h-full text-primary text-lg rounded-xl transition-all hover:bg-transparent hover:text-primary"
             >
-              Learn More
+              {t("learn-more")}
             </Button>
           </div>
         </div>

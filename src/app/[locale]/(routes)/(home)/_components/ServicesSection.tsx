@@ -1,33 +1,32 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export default function ServicesSection() {
+  const t = useTranslations("landing");
+
   const servicesData = [
     {
       icon: "/icons/HR.svg",
-      title: "HR Managers",
-      description:
-        "Organize team buildings, corporate parties, and company events without the headache",
+      title: t("hr-managers"),
+      description: t("ht-managers-text"),
       color: "#6366F1",
     },
     {
       icon: "/icons/HR.svg",
-      title: "Office Managers",
-      description:
-        "Coordinate quarterly meetings, training workshops, and client entertainment seamlessly",
+      title: t("office-managers"),
+      description: t("office-managers-text"),
       color: "#3B82F6",
     },
     {
       icon: "/icons/Rocket.svg",
-      title: "Startup Founders",
-      description:
-        "Plan company milestones, offsites, and team celebrations with ease",
+      title: t("organizational-developers"),
+      description: t("organizational-developers-text"),
       color: "#10B981",
     },
     {
       icon: "/icons/Enterprise.svg",
-      title: "Enterprise Teams",
-      description:
-        "Scale event management across departments and locations effortlessly",
+      title: t("enterprise-teams"),
+      description: t("enterprise-teams-text"),
       color: "#6366F1",
     },
   ];
@@ -36,7 +35,7 @@ export default function ServicesSection() {
     <section className="p-20 bg-primary">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl text-white font-bold text-center mb-16">
-          Who We Serve
+          {t("who-we-serve")}
         </h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
